@@ -1,6 +1,7 @@
 import random # For generating random numbers
 import sys # We will use sys.exit to exit the program
 import pygame
+from os import path
 from pygame.locals import * # Basic pygame imports
 
 # Global Variables for the game
@@ -12,9 +13,12 @@ SCREEN = pygame.display.set_mode((SCREENWIDTH, SCREENHEIGHT))
 GROUNDY = SCREENHEIGHT * 0.8
 GAME_SPRITES = {}
 GAME_SOUNDS = {}
-PLAYER = "D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\bird.png"
-BACKGROUND = "D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\background.png"
-PIPE = "D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\pipe.png"
+# PLAYER = "D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\bird.png"
+PLAYER = path.join(path.dirname(__file__), 'gallery/sprites/bird.png')
+# BACKGROUND = "D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\background.png"
+BACKGROUND = path.join(path.dirname(__file__), 'gallery/sprites/background.png')
+# PIPE = "D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\pipe.png"
+PIPE = path.join(path.dirname(__file__), 'gallery/sprites/pipe.png')
 
 
 def welcomeScreen():
@@ -193,30 +197,49 @@ if __name__ == "__main__":
     FPSCLOCK = pygame.time.Clock()
     pygame.display.set_caption('Flappy Bird by MohammedImtiazulIslamShuvo')
     GAME_SPRITES['numbers'] = ( 
-        pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\0.png").convert_alpha(),
-        pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\1.png").convert_alpha(),
-        pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\2.png").convert_alpha(),
-        pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\3.png").convert_alpha(),
-        pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\4.png").convert_alpha(),
-        pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\5.png").convert_alpha(),
-        pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\6.png").convert_alpha(),
-        pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\7.png").convert_alpha(),
-        pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\8.png").convert_alpha(),
-        pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\9.png").convert_alpha(),
+        # pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\0.png").convert_alpha(),
+        pygame.image.load(path.join(path.dirname(__file__), 'gallery/sprites/0.png')).convert_alpha(),
+        # pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\1.png").convert_alpha(),
+        pygame.image.load(path.join(path.dirname(__file__), 'gallery/sprites/1.png')).convert_alpha(),
+        # pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\2.png").convert_alpha(),
+        pygame.image.load(path.join(path.dirname(__file__), 'gallery/sprites/2.png')).convert_alpha(),
+        # pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\2.png").convert_alpha(),
+        # pygame.image.load(path.join(path.dirname(__file__), 'gallery/sprites/2.png')).convert_alpha(),
+        # pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\3.png").convert_alpha(),
+        pygame.image.load(path.join(path.dirname(__file__), 'gallery/sprites/3.png')).convert_alpha(),
+        # pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\4.png").convert_alpha(),
+        pygame.image.load(path.join(path.dirname(__file__), 'gallery/sprites/4.png')).convert_alpha(),
+        # pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\5.png").convert_alpha(),
+        pygame.image.load(path.join(path.dirname(__file__), 'gallery/sprites/5.png')).convert_alpha(),
+        # pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\6.png").convert_alpha(),
+        pygame.image.load(path.join(path.dirname(__file__), 'gallery/sprites/6.png')).convert_alpha(),
+        # pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\7.png").convert_alpha(),
+        pygame.image.load(path.join(path.dirname(__file__), 'gallery/sprites/7.png')).convert_alpha(),
+        # pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\8.png").convert_alpha(),
+        pygame.image.load(path.join(path.dirname(__file__), 'gallery/sprites/8.png')).convert_alpha(),
+        # pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\9.png").convert_alpha(),
+        pygame.image.load(path.join(path.dirname(__file__), 'gallery/sprites/9.png')).convert_alpha(),
     )
     # GAME_SPRITES['message'] = pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\message.png").convert_alpha()
-    GAME_SPRITES['base'] = pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\base.png").convert_alpha()
+    # GAME_SPRITES['base'] = pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\base.png").convert_alpha()
+    GAME_SPRITES['base'] = pygame.image.load(path.join(path.dirname(__file__), 'gallery/sprites/base.png')).convert_alpha()
     GAME_SPRITES['pipe'] = (pygame.transform.rotate(pygame.image.load( PIPE).convert_alpha(), 180),
     pygame.image.load(PIPE).convert_alpha()
     )
     # Game sounds
-    GAME_SOUNDS['die'] = pygame.mixer.Sound(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\audio\die.wav")
-    GAME_SOUNDS['hit'] = pygame.mixer.Sound(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\audio\hit.wav")
-    GAME_SOUNDS['point'] = pygame.mixer.Sound(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\audio\point.wav")
-    GAME_SOUNDS['swoosh'] = pygame.mixer.Sound(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\audio\swoosh.wav")
-    GAME_SOUNDS['wing'] = pygame.mixer.Sound(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\audio\wing.wav")
-    GAME_SPRITES['background'] = pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\background.png").convert()
-    GAME_SPRITES['player'] = pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\bird.png").convert_alpha()
+    # GAME_SOUNDS['die'] = pygame.mixer.Sound(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\audio\die.wav")
+    GAME_SOUNDS['die'] = pygame.mixer.Sound(path.join(path.dirname(__file__), 'gallery/audio/die.wav'))
+    # GAME_SOUNDS['hit'] = pygame.mixer.Sound(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\audio\hit.wav")
+    GAME_SOUNDS['hit'] = pygame.mixer.Sound(path.join(path.dirname(__file__), 'gallery/audio/hit.wav'))
+    # GAME_SOUNDS['point'] = pygame.mixer.Sound(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\audio\point.wav")
+    GAME_SOUNDS['point'] = pygame.mixer.Sound(path.join(path.dirname(__file__), 'gallery/audio/point.wav'))
+    # GAME_SOUNDS['swoosh'] = pygame.mixer.Sound(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\audio\swoosh.wav")
+    GAME_SOUNDS['swoosh'] = pygame.mixer.Sound(path.join(path.dirname(__file__), 'gallery/audio/swoosh.wav'))
+    GAME_SOUNDS['wing'] = pygame.mixer.Sound(path.join(path.dirname(__file__), 'gallery/audio/wing.wav'))
+    # GAME_SPRITES['background'] = pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\background.png").convert()
+    GAME_SPRITES['background'] = pygame.image.load(path.join(path.dirname(__file__), 'gallery/sprites/background.png')).convert()
+    # GAME_SPRITES['player'] = pygame.image.load(r"D:\pythonUniverse\galaxiOfProgrammingHeros\pythonProject\HackTheFlappy\gallery\sprites\bird.png").convert_alpha()
+    GAME_SPRITES['player'] = pygame.image.load(path.join(path.dirname(__file__), 'gallery/sprites/bird.png')).convert_alpha()
     while True:
         welcomeScreen() # Shows welcome screen to the user until he presses a button
         mainGame() # This is the main game function
